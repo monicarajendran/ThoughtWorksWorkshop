@@ -16,8 +16,13 @@ class ProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
         configureViewModel()
         loadProducts()
+    }
+    
+    func configureTableView() {
+        productTableView.register(UINib(nibName: "ProductListTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductListTableViewCell")
     }
     
     func configureViewModel() {
@@ -38,7 +43,7 @@ extension ProductViewController: ProductViewModelProtocol {
     }
 }
 
-extension ProductViewController: ProdutListTableViewCellProtocol {
+extension ProductViewController: ProductListTableViewCellProtocol {
     func didTapWishlist(key: String, value: Double) {
         UserDefaults.standard.set(value, forKey: key)
     }

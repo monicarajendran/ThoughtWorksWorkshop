@@ -22,75 +22,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProdutListTableViewCell" rowHeight="103" id="jMq-mw-Dcm" customClass="ProdutListTableViewCell" customModule="ThoughtWorksWorkshop" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="103"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProdutListTableViewCell" id="7ou-ku-Tci" customClass="ProductListTableViewCell" customModule="ThoughtWorksWorkshop" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jMq-mw-Dcm" id="Twc-hU-Wus">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7ou-ku-Tci" id="weZ-Ko-0Zz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rBa-Cu-bap">
-                                                            <rect key="frame" x="20" y="16.5" width="50" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="1mh-gx-820"/>
-                                                                <constraint firstAttribute="height" constant="50" id="ZaH-fA-jfb"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="sgD-sw-unD">
-                                                            <rect key="frame" x="90" y="19.5" width="284" height="44"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77R-LS-Fqr">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="284" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fa7-hd-QMu">
-                                                                    <rect key="frame" x="0.0" y="23.5" width="284" height="20.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PVq-Xx-kyZ">
-                                                            <rect key="frame" x="267" y="61" width="127" height="32"/>
-                                                            <subviews>
-                                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="hwu-WH-p57">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
-                                                                    <connections>
-                                                                        <action selector="wishlistStepperAction:" destination="jMq-mw-Dcm" eventType="valueChanged" id="Jzk-WP-hsa"/>
-                                                                    </connections>
-                                                                </stepper>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(0)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elM-Z5-DRU">
-                                                                    <rect key="frame" x="104" y="0.0" width="23" height="32"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="32" id="aDa-Ps-9hm"/>
-                                                            </constraints>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="sgD-sw-unD" secondAttribute="trailing" constant="20" id="Je9-2V-hWH"/>
-                                                        <constraint firstAttribute="bottom" secondItem="PVq-Xx-kyZ" secondAttribute="bottom" constant="10" id="UaV-52-MKJ"/>
-                                                        <constraint firstItem="sgD-sw-unD" firstAttribute="centerY" secondItem="Twc-hU-Wus" secondAttribute="centerY" constant="-10" id="dWs-BD-EYi"/>
-                                                        <constraint firstItem="rBa-Cu-bap" firstAttribute="centerY" secondItem="Twc-hU-Wus" secondAttribute="centerY" constant="-10" id="fYN-FY-Asl"/>
-                                                        <constraint firstAttribute="trailing" secondItem="PVq-Xx-kyZ" secondAttribute="trailing" constant="20" id="iB0-mM-wup"/>
-                                                        <constraint firstItem="sgD-sw-unD" firstAttribute="leading" secondItem="rBa-Cu-bap" secondAttribute="trailing" constant="20" id="vuf-fO-xub"/>
-                                                        <constraint firstItem="rBa-Cu-bap" firstAttribute="leading" secondItem="Twc-hU-Wus" secondAttribute="leading" constant="20" id="xYh-Q9-tbV"/>
-                                                    </constraints>
                                                 </tableViewCellContentView>
-                                                <connections>
-                                                    <outlet property="price" destination="fa7-hd-QMu" id="izg-QT-Qbf"/>
-                                                    <outlet property="productImage" destination="rBa-Cu-bap" id="CAT-yw-BjS"/>
-                                                    <outlet property="productName" destination="77R-LS-Fqr" id="vyD-ZO-y9j"/>
-                                                    <outlet property="wishlistCount" destination="elM-Z5-DRU" id="KIZ-gM-FFo"/>
-                                                    <outlet property="wishlistStepper" destination="hwu-WH-p57" id="elb-W8-yUV"/>
-                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>

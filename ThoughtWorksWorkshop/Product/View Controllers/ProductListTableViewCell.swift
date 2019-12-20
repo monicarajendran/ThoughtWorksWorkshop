@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol ProdutListTableViewCellProtocol: class {
+protocol ProductListTableViewCellProtocol: class {
     func didTapWishlist(key: String, value: Double)
 }
 
-class ProdutListTableViewCell :UITableViewCell {
+class ProductListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
@@ -21,7 +21,7 @@ class ProdutListTableViewCell :UITableViewCell {
     @IBOutlet weak var wishlistCount: UILabel!
     
     var product: Product?
-    weak var delegate: ProdutListTableViewCellProtocol?
+    weak var delegate: ProductListTableViewCellProtocol?
     
     func configure(withProduct product: Product) {
         
@@ -33,9 +33,7 @@ class ProdutListTableViewCell :UITableViewCell {
         price.text = product.offerPrice ?? product.price
         setPriceColor()
         
-        
         guard let url = URL(string: product.image), let imageData = try? Data(contentsOf: url) else { return }
-//        UIImage(
         productImage.image = UIImage(data: imageData)
         
     }
