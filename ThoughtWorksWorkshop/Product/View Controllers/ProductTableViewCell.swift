@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ProdutListTableViewCellProtocol: class {
+    func didTapWishlist(key: String, value: Double)
+}
+
 class ProdutListTableViewCell :UITableViewCell {
     
     @IBOutlet weak var productImage: UIImageView!
@@ -17,6 +21,7 @@ class ProdutListTableViewCell :UITableViewCell {
     @IBOutlet weak var wishlistCount: UILabel!
     
     var product: Product?
+    weak var delegate: ProdutListTableViewCellProtocol?
     
     func configure(withProduct product: Product) {
         
@@ -25,6 +30,7 @@ class ProdutListTableViewCell :UITableViewCell {
         productName.text = product.name
         price.text = product.price
         
+        wishlistCount.text = "(" + Int(UserDefaults.standard.double(forKey: product.pid)).description + ")"
         guard let url = URL(string: product.image), let imageData = try? Data(contentsOf: url) else { return }
         productImage.image = UIImage(data: imageData)
         price.text = product.offerPrice ?? product.price
@@ -36,6 +42,8 @@ class ProdutListTableViewCell :UITableViewCell {
     }
     
     @IBAction func wishlistStepperAction(_ sender: UIStepper) {
+        guard let product = product else { return }
+        self.delegate?.didTapWishlist(key: product.pid, value: sender.value)
         wishlistCount.text = sender.value.description
     }
     

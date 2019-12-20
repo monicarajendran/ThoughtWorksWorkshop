@@ -15,7 +15,7 @@
 		DD8E77DD23ACB31F009B3602 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8E77DC23ACB31F009B3602 /* ProductTableViewCell.swift */; };
 		DDABE71C23AC92830033CE73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABE71B23AC92830033CE73 /* AppDelegate.swift */; };
 		DDABE71E23AC92830033CE73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABE71D23AC92830033CE73 /* SceneDelegate.swift */; };
-		DDABE72023AC92830033CE73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABE71F23AC92830033CE73 /* ViewController.swift */; };
+		DDABE72023AC92830033CE73 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDABE71F23AC92830033CE73 /* ProductViewController.swift */; };
 		DDABE72323AC92830033CE73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDABE72123AC92830033CE73 /* Main.storyboard */; };
 		DDABE72523AC92840033CE73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDABE72423AC92840033CE73 /* Assets.xcassets */; };
 		DDABE72823AC92840033CE73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDABE72623AC92840033CE73 /* LaunchScreen.storyboard */; };
@@ -33,7 +33,7 @@
 		DDABE71823AC92830033CE73 /* ThoughtWorksWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThoughtWorksWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDABE71B23AC92830033CE73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDABE71D23AC92830033CE73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DDABE71F23AC92830033CE73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDABE71F23AC92830033CE73 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		DDABE72223AC92830033CE73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDABE72423AC92840033CE73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDABE72723AC92840033CE73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		DD1A909D23ACCAD900AE3E95 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DDABE71F23AC92830033CE73 /* ViewController.swift */,
+				DDABE71F23AC92830033CE73 /* ProductViewController.swift */,
 				DD8E77DC23ACB31F009B3602 /* ProductTableViewCell.swift */,
 			);
 			path = "View Controllers";
@@ -231,7 +231,7 @@
 				DD8E77D723ACB25F009B3602 /* CodableExtension.swift in Sources */,
 				DDD7E1A223ACABBE00332D5B /* BaseApiProvider.swift in Sources */,
 				DD8E77DD23ACB31F009B3602 /* ProductTableViewCell.swift in Sources */,
-				DDABE72023AC92830033CE73 /* ViewController.swift in Sources */,
+				DDABE72023AC92830033CE73 /* ProductViewController.swift in Sources */,
 				DDABE73023AC92E00033CE73 /* Service.swift in Sources */,
 				DDABE71C23AC92830033CE73 /* AppDelegate.swift in Sources */,
 				DD20BDBA23ACAD1700B852E3 /* ProductApi.swift in Sources */,

@@ -22,14 +22,6 @@ class ProductViewController: UIViewController {
     }
 }
 
-extension ProductViewController: ProductViewModelProtocol {
-    func didFinishProductsList() {
-        DispatchQueue.main.async {
-            self.productTableView.reloadData()
-        }
-    }
-}
-
 extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,6 +33,7 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProdutListTableViewCell", for: indexPath) as? ProdutListTableViewCell
             else { return UITableViewCell() }
         guard let products = self.viewModel?.products else { return UITableViewCell() }
+        cell.delegate = self
         cell.configure(withProduct: products[indexPath.row])
         
         
@@ -51,4 +44,20 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
         return 100
     }
 }
+
+extension ProductViewController: ProductViewModelProtocol {
+    func didFinishProductsList() {
+        DispatchQueue.main.async {
+            self.productTableView.reloadData()
+        }
+    }
+}
+
+extension ProductViewController: ProdutListTableViewCellProtocol {
+    func didTapWishlist(key: String, value: Double) {
+        UserDefaults.standard.set(value, forKey: key)
+    }
+}
+
+
 
