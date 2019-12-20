@@ -49,6 +49,7 @@ class ProductService: BaseApiProvider {
     init(provider: MoyaProvider<ProductApi> = MoyaProvider<ProductApi>()) {
         self.provider = provider
     }
+    
     func fetchProducts(_ completion: ProductServiceHandler?)  {
         provider.request(.fetchProductList) { (response) in
             let moyaResponse = self.handleResponse(response)

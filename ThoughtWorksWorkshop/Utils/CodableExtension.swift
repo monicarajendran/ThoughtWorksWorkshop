@@ -7,6 +7,12 @@
 //
 
 import Foundation
+extension Encodable {
+    var toData: Data? {
+        return try? PropertyListEncoder()
+            .encode(self)
+    }
+}
 
 extension Decodable {
     static func decode(fromJsonData data: Data) -> Self? {
@@ -15,5 +21,9 @@ extension Decodable {
             return nil
         }
         return object
+    }
+    
+    static func decode(fromPlistData data: Data) -> Self? {
+        return try? PropertyListDecoder().decode(self.self, from: data)
     }
 }

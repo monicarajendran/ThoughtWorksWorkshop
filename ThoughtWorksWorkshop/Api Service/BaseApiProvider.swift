@@ -30,17 +30,7 @@ extension BaseApiProvider {
             }
             
             case let .failure(error):
-                return (nil, nil)
+                return (nil, error)
         }
-    }
-}
-
-public extension Decodable {
-    static func initialize(withData data: Data) -> Self? {
-        let decoder = JSONDecoder()
-        guard let object = try? decoder.decode(self.self, from: data) else {
-            return nil
-        }
-        return object
     }
 }
