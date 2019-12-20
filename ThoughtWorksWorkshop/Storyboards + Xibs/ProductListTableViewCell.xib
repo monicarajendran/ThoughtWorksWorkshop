@@ -27,9 +27,9 @@
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="q6T-aX-7K9">
-                        <rect key="frame" x="80" y="27.5" width="314" height="44"/>
+                        <rect key="frame" x="80" y="37.5" width="314" height="44"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMz-02-RAS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMz-02-RAS">
                                 <rect key="frame" x="0.0" y="0.0" width="314" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -66,7 +66,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="q6T-aX-7K9" secondAttribute="trailing" constant="20" id="7cj-Gt-Gu1"/>
-                    <constraint firstItem="q6T-aX-7K9" firstAttribute="centerY" secondItem="eVZ-iS-hXC" secondAttribute="centerY" constant="-10" id="C0y-Q4-DNR"/>
+                    <constraint firstItem="q6T-aX-7K9" firstAttribute="centerY" secondItem="eVZ-iS-hXC" secondAttribute="centerY" id="C0y-Q4-DNR"/>
                     <constraint firstItem="Ybg-la-xFh" firstAttribute="leading" secondItem="eVZ-iS-hXC" secondAttribute="leading" id="Cjr-tX-4uY"/>
                     <constraint firstAttribute="bottom" secondItem="Ybg-la-xFh" secondAttribute="bottom" id="Gsp-uh-KHr"/>
                     <constraint firstItem="q6T-aX-7K9" firstAttribute="leading" secondItem="dcP-mh-mJU" secondAttribute="trailing" constant="20" id="LdT-e8-KrW"/>
