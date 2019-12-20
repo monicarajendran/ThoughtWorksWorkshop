@@ -12,16 +12,20 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var productTableView: UITableView!
     
     var products: [Product] = []
+    var viewModel: ProductViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadProductList()
+        self.viewModel = ProductViewModel()
+        viewModel?.delegate = self
+        viewModel?.fetchProducts()
     }
-    
-    func loadProductList() {
-        ProductService().fetchProducts { (data, _) in
-            guard let data = data, let productList = [Product].decode(fromJsonData: data) else { return }
-            self.products = productList
+
+}
+
+extension ProductViewController: ProductViewModelProtocol {
+    func didFinishProductsList() {
+        DispatchQueue.main.async {
             self.productTableView.reloadData()
         }
     }
@@ -30,12 +34,14 @@ class ProductViewController: UIViewController {
 extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        guard let products = self.viewModel?.products else { return 0 }
+        return products.count//products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProdutListTableViewCell", for: indexPath) as? ProdutListTableViewCell
             else { return UITableViewCell() }
+        guard let products = self.viewModel?.products else { return UITableViewCell() }
         cell.configure(withProduct: products[indexPath.row])
         
         return cell
