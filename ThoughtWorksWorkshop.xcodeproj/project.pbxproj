@@ -86,7 +86,9 @@
 		DD6F606323ACDD1000DBE018 /* Storyboards + Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				DD6F606423ACDD3B00DBE018 /* ProductListTableViewCell.xib */,
+				DDABE72623AC92840033CE73 /* LaunchScreen.storyboard */,
+				DDABE72123AC92830033CE73 /* Main.storyboard */,
+				DDB3337523AD976700BBCD2E /* Xibs */,
 			);
 			path = "Storyboards + Xibs";
 			sourceTree = "<group>";
@@ -144,12 +146,18 @@
 				DD6F606323ACDD1000DBE018 /* Storyboards + Xibs */,
 				DD8E77D523ACB250009B3602 /* Utils */,
 				DD6F606123ACDCEF00DBE018 /* Resources */,
-				DDABE72123AC92830033CE73 /* Main.storyboard */,
-				DDABE72623AC92840033CE73 /* LaunchScreen.storyboard */,
 				DDABE72923AC92840033CE73 /* Info.plist */,
 				DDABE73123AC95020033CE73 /* ProductList.json */,
 			);
 			path = ThoughtWorksWorkshop;
+			sourceTree = "<group>";
+		};
+		DDB3337523AD976700BBCD2E /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				DD6F606423ACDD3B00DBE018 /* ProductListTableViewCell.xib */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		DDFA043B23ACCE78002DB7AE /* Model */ = {
