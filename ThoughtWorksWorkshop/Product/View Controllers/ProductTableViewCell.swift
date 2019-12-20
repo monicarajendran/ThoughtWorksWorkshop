@@ -29,12 +29,24 @@ class ProdutListTableViewCell :UITableViewCell {
         
         productName.text = product.name
         price.text = product.price
-        
-        wishlistCount.text = "(" + Int(UserDefaults.standard.double(forKey: product.pid)).description + ")"
-        guard let url = URL(string: product.image), let imageData = try? Data(contentsOf: url) else { return }
-        productImage.image = UIImage(data: imageData)
+        wishlistCount.text = getWishListText
         price.text = product.offerPrice ?? product.price
-        if product.offerPrice != nil {
+        setPriceColor()
+        
+        
+        guard let url = URL(string: product.image), let imageData = try? Data(contentsOf: url) else { return }
+//        UIImage(
+        productImage.image = UIImage(data: imageData)
+        
+    }
+    
+    var getWishListText: String {
+        guard let product = product else { return "" }
+        return "(" + Int(UserDefaults.standard.double(forKey: product.pid)).description  + ")"
+    }
+    
+    func setPriceColor() {
+        if product?.offerPrice != nil {
             price.textColor = .red
         } else {
             price.textColor = .black

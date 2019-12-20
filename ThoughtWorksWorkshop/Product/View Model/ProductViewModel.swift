@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  ProductViewModel.swift
 //  ThoughtWorksWorkshop
 //
 //  Created by Monica on 20/12/19.
@@ -27,13 +27,10 @@ class ProductViewModel {
         self.apiService = apiService
     }
     
-    
-    
     func fetchProducts() {
         apiService.fetchProducts { (data, _) in
             guard let data = data, let productList = [Product].decode(fromJsonData: data) else { return }
             self.products = productList
         }
     }
-    
 }

@@ -16,32 +16,17 @@ class ProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewModel()
+        loadProducts()
+    }
+    
+    func configureViewModel() {
         self.viewModel = ProductViewModel()
         viewModel?.delegate = self
+    }
+    
+    func loadProducts() {
         viewModel?.fetchProducts()
-    }
-}
-
-extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let products = self.viewModel?.products else { return 0 }
-        return products.count//products.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProdutListTableViewCell", for: indexPath) as? ProdutListTableViewCell
-            else { return UITableViewCell() }
-        guard let products = self.viewModel?.products else { return UITableViewCell() }
-        cell.delegate = self
-        cell.configure(withProduct: products[indexPath.row])
-        
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
 }
 
