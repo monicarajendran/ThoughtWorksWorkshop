@@ -16,6 +16,11 @@ struct Product: Codable {
     var description: String?
     var image: String
     
+    var finalPrice: String {
+        guard let offerPrice = offerPrice else { return price }
+        return offerPrice
+    }
+    
     enum CodingKeys: String, CodingKey {
         case pid
         case name

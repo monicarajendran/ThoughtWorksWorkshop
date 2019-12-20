@@ -30,7 +30,7 @@ class ProductListTableViewCell: UITableViewCell {
         productName.text = product.name
         price.text = product.price
         wishlistCount.text = getWishListText
-        price.text = product.offerPrice ?? product.price
+        price.text = product.finalPrice
         setPriceColor()
         
         guard let url = URL(string: product.image), let imageData = try? Data(contentsOf: url) else { return }
