@@ -20,7 +20,6 @@ class ProductViewController: UIViewController {
         viewModel?.delegate = self
         viewModel?.fetchProducts()
     }
-
 }
 
 extension ProductViewController: ProductViewModelProtocol {
@@ -44,11 +43,12 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
         guard let products = self.viewModel?.products else { return UITableViewCell() }
         cell.configure(withProduct: products[indexPath.row])
         
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 100
     }
 }
 

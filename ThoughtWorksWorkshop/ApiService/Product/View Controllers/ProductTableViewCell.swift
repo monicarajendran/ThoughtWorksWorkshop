@@ -12,19 +12,31 @@ class ProdutListTableViewCell :UITableViewCell {
     
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
-    @IBOutlet weak var rate: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var wishlistStepper: UIStepper!
+    @IBOutlet weak var wishlistCount: UILabel!
+    
+    var product: Product?
     
     func configure(withProduct product: Product) {
+        
+        self.product = product
+        
         productName.text = product.name
-        rate.text = product.price
+        price.text = product.price
         
         guard let url = URL(string: product.image), let imageData = try? Data(contentsOf: url) else { return }
         productImage.image = UIImage(data: imageData)
-        rate.text = product.offerPrice ?? product.price
+        price.text = product.offerPrice ?? product.price
         if product.offerPrice != nil {
-            rate.textColor = .red
+            price.textColor = .red
         } else {
-            rate.textColor = .black
+            price.textColor = .black
         }
     }
+    
+    @IBAction func wishlistStepperAction(_ sender: UIStepper) {
+        wishlistCount.text = sender.value.description
+    }
+    
 }
