@@ -19,10 +19,12 @@ class ProdutListTableViewCell :UITableViewCell {
         rate.text = product.price
         
         guard let url = URL(string: product.image), let imageData = try? Data(contentsOf: url) else { return }
-        //        } catch {
-        //            print("Cannot convert data")
-        //        }
-        //
         productImage.image = UIImage(data: imageData)
+        rate.text = product.offerPrice ?? product.price
+        if product.offerPrice != nil {
+            rate.textColor = .red
+        } else {
+            rate.textColor = .black
+        }
     }
 }

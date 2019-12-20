@@ -7,16 +7,6 @@
 //
 
 import UIKit
-
-//struct ProductService {
-//
-//    static func fetchProductList() -> Data {
-//        let bundle =  Bundle(for: ProductViewController.self)
-//        let path = bundle.path(forResource: "ProductList", ofType: "json")
-//        return try! Data(contentsOf: URL(fileURLWithPath: path!))
-//    }
-//}
-
 class ProductViewController: UIViewController {
 
     @IBOutlet weak var productTableView: UITableView!
@@ -29,8 +19,11 @@ class ProductViewController: UIViewController {
     }
     
     func loadProductList() {
-//        guard let productData =  else { return }
-//        self.products = [Product].decode(fromJsonData: productData)
+        ProductService().fetchProducts { (data, _) in
+            guard let data = data, let productList = [Product].decode(fromJsonData: data) else { return }
+            self.products = productList
+            self.productTableView.reloadData()
+        }
     }
 }
 

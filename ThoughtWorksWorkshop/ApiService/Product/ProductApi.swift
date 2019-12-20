@@ -16,11 +16,11 @@ enum ProductApi {
 
 extension ProductApi: TargetType {
     var baseURL: URL {
-        return URL(string: "http://www.mocky.io/v2/5dfb59e72f00006200ff9e80")!
+        return URL(string: "http://www.mocky.io")!
     }
     
     var path: String {
-        return ""
+        return "/v2/5dfb59e72f00006200ff9e80"
     }
     
     var method: Moya.Method {
@@ -49,7 +49,7 @@ class ProductService: BaseApiProvider {
     init(provider: MoyaProvider<ProductApi> = MoyaProvider<ProductApi>()) {
         self.provider = provider
     }
-    func fetchProducts(completion: ProductServiceHandler?)  {
+    func fetchProducts(_ completion: ProductServiceHandler?)  {
         provider.request(.fetchProductList) { (response) in
             let moyaResponse = self.handleResponse(response)
             completion?(moyaResponse.data, moyaResponse.error)
