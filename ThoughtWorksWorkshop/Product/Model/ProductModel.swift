@@ -9,12 +9,12 @@
 import Foundation
 
 struct Product: Codable {
-    var pid: String
-    var name: String
-    var price: String
-    var offerPrice: String?
-    var description: String?
-    var image: String
+    let pid: String
+    let name: String
+    let price: String
+    let offerPrice: String?
+    let description: String?
+    let image: String
     
     var finalPrice: String {
         guard let offerPrice = offerPrice else { return price }
