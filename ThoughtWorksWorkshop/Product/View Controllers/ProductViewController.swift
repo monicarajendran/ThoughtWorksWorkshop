@@ -46,6 +46,7 @@ extension ProductViewController: ProductViewModelProtocol {
 extension ProductViewController: ProductListTableViewCellProtocol {
     func didTapWishlist(key: String, value: Double) {
         UserDefaults.standard.set(value, forKey: key)
+        UserDefaults.standard.synchronize()
     }
 }
 

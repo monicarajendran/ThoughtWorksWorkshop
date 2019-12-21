@@ -21,7 +21,10 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource {
             else { return UITableViewCell() }
         guard let products = self.viewModel?.products else { return UITableViewCell() }
         cell.delegate = self
-        cell.configure(withProduct: products[indexPath.row])
+        cell.product = products[indexPath.row]
+        cell.configure()
+        cell.wishlistStepper.value = cell.productWishlistCount
+        
         
         return cell
     }

@@ -23,24 +23,24 @@ class ProductListTableViewCell: UITableViewCell {
     var product: Product?
     weak var delegate: ProductListTableViewCellProtocol?
     
-    func configure(withProduct product: Product) {
-        
-        self.product = product
-        
+    func configure() {
+        guard let product = product else { return }
         productName.text = product.name
         price.text = product.price
-        wishlistCount.text = getWishListText
+        wishlistCount.text = getWishListText(forCount: productWishlistCount)
         price.text = product.finalPrice
         setPriceColor()
         productImage.imageFromServerURL(urlString: product.image)
     }
     
-    var getWishListText: String {
-        guard let product = product else { return "" }
-        return "(" + Int(UserDefaults.standard.double(forKey: product.pid)).description  + ")"
+    func getWishListText(forCount count: Double) -> String {
+        "(" + Int(count).description  + ")"
     }
     
-    
+    var productWishlistCount: Double {
+        guard let product = product else { return 0.0 }
+        return UserDefaults.standard.double(forKey: product.pid)
+    }
     
     func setPriceColor() {
         if product?.offerPrice != nil {
@@ -53,7 +53,7 @@ class ProductListTableViewCell: UITableViewCell {
     @IBAction func wishlistStepperAction(_ sender: UIStepper) {
         guard let product = product else { return }
         self.delegate?.didTapWishlist(key: product.pid, value: sender.value)
-        wishlistCount.text = sender.value.description //
+        wishlistCount.text = getWishListText(forCount: sender.value)
     }
     
 }
