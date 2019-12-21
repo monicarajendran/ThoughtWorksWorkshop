@@ -42,7 +42,7 @@ extension ProductApi: TargetType {
 
 class ProductService: BaseApiProvider {
     
-    var provider: MoyaProvider<ProductApi>
+    private(set) var provider: MoyaProvider<ProductApi>
     
     typealias ProductServiceHandler = ((_ data: Data?, _ error: Error?) -> Void)
     
@@ -57,6 +57,4 @@ class ProductService: BaseApiProvider {
         }
     }
 }
-
-
 

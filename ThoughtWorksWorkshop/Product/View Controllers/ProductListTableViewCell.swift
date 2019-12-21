@@ -54,7 +54,7 @@ class ProductListTableViewCell: UITableViewCell {
     @IBAction func wishlistStepperAction(_ sender: UIStepper) {
         guard let product = product else { return }
         self.delegate?.didTapWishlist(key: product.pid, value: sender.value)
-        wishlistCount.text = sender.value.description
+        wishlistCount.text = sender.value.description //
     }
     
 }
