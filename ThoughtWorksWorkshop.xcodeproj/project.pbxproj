@@ -22,6 +22,7 @@
 		DDABE72523AC92840033CE73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDABE72423AC92840033CE73 /* Assets.xcassets */; };
 		DDABE72823AC92840033CE73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDABE72623AC92840033CE73 /* LaunchScreen.storyboard */; };
 		DDABE73223AC95020033CE73 /* ProductList.json in Resources */ = {isa = PBXBuildFile; fileRef = DDABE73123AC95020033CE73 /* ProductList.json */; };
+		DDB3337723ADA69300BBCD2E /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB3337623ADA69300BBCD2E /* UIExtensions.swift */; };
 		DDD7E1A223ACABBE00332D5B /* BaseApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7E1A123ACABBE00332D5B /* BaseApiProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		DDABE72723AC92840033CE73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDABE72923AC92840033CE73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDABE73123AC95020033CE73 /* ProductList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductList.json; sourceTree = "<group>"; };
+		DDB3337623ADA69300BBCD2E /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		DDD7E1A123ACABBE00332D5B /* BaseApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				DD8E77D623ACB25F009B3602 /* CodableExtension.swift */,
+				DDB3337623ADA69300BBCD2E /* UIExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				DD8E77D723ACB25F009B3602 /* CodableExtension.swift in Sources */,
 				DDD7E1A223ACABBE00332D5B /* BaseApiProvider.swift in Sources */,
 				DD8E77DD23ACB31F009B3602 /* ProductListTableViewCell.swift in Sources */,
+				DDB3337723ADA69300BBCD2E /* UIExtensions.swift in Sources */,
 				DDABE72023AC92830033CE73 /* ProductViewController.swift in Sources */,
 				DDABE71C23AC92830033CE73 /* AppDelegate.swift in Sources */,
 				DD20BDBA23ACAD1700B852E3 /* ProductApiService.swift in Sources */,

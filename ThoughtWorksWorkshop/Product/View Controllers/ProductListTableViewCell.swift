@@ -32,16 +32,15 @@ class ProductListTableViewCell: UITableViewCell {
         wishlistCount.text = getWishListText
         price.text = product.finalPrice
         setPriceColor()
-        
-        guard let url = URL(string: product.image), let imageData = try? Data(contentsOf: url) else { return }
-        productImage.image = UIImage(data: imageData)
-        
+        productImage.imageFromServerURL(urlString: product.image)
     }
     
     var getWishListText: String {
         guard let product = product else { return "" }
         return "(" + Int(UserDefaults.standard.double(forKey: product.pid)).description  + ")"
     }
+    
+    
     
     func setPriceColor() {
         if product?.offerPrice != nil {
