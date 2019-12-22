@@ -12,12 +12,13 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var productTableView: UITableView!
     
     var products: [Product] = []
-    var viewModel: ProductViewModel?
+    var viewModel: ProductViewModel = ProductViewModel()
+    var router: ProductRouter = ProductRouter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         configureTableView()
-        configureViewModel()
         loadProducts()
     }
     
@@ -25,20 +26,15 @@ class ProductViewController: UIViewController {
         productTableView.register(UINib(nibName: "ProductListTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductListTableViewCell")
     }
     
-    func configureViewModel() {
-        self.viewModel = ProductViewModel()
-        viewModel?.delegate = self
-    }
-    
     func loadProducts() {
-        viewModel?.fetchProducts()
+        viewModel.fetchProducts()
     }
 }
 
 extension ProductViewController: ProductViewModelProtocol {
     func didFinishProductsList() {
         DispatchQueue.main.async {
-            self.productTableView.reloadData()
+            self.productTableView.reloadData() 
         }
     }
 }

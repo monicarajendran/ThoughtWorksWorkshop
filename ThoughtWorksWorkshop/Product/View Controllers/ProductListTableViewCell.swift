@@ -21,6 +21,7 @@ class ProductListTableViewCell: UITableViewCell {
     @IBOutlet weak var wishlistCount: UILabel!
     
     var product: Product?
+    var wishList: WishList?
     weak var delegate: ProductListTableViewCellProtocol?
     
     func configure() {
@@ -55,5 +56,4 @@ class ProductListTableViewCell: UITableViewCell {
         self.delegate?.didTapWishlist(key: product.pid, value: sender.value)
         wishlistCount.text = getWishListText(forCount: sender.value)
     }
-    
 }
