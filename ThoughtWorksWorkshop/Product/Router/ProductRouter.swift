@@ -36,5 +36,4 @@ class ProductRouter: Router {
             source.navigationController?.pushViewController(productVc, animated: true)
         }
     }
-    
 }

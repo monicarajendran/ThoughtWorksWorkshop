@@ -7,6 +7,18 @@
 //
 
 import UIKit
+
+enum CellIdentifiers {
+    case productList
+    
+    var id: String {
+        switch self {
+        case .productList:
+            return "ProductListTableViewCell"
+        }
+    }
+}
+
 class ProductViewController: UIViewController {
 
     @IBOutlet weak var productTableView: UITableView!
@@ -23,7 +35,8 @@ class ProductViewController: UIViewController {
     }
     
     func configureTableView() {
-        productTableView.register(UINib(nibName: "ProductListTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductListTableViewCell")
+        //TODO: Use extensin for registering cell.
+        productTableView.register(UINib(nibName: CellIdentifiers.productList.id, bundle: nil), forCellReuseIdentifier: CellIdentifiers.productList.id)
     }
     
     func loadProducts() {
